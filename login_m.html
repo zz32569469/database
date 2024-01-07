@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400&display=swap" rel="stylesheet">
+
+<title>登录页面</title>
+<style>
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ECF0F1; 
+}
+
+.signin-title {
+  font-family: 'Montserrat Subrayada', san  s-serif; 
+  font-size: 50px;
+  font-style: normal; 
+  font-weight: 400; 
+  line-height: normal; 
+  text-align: center;
+  width: 100%; 
+  margin: 20px 0; 
+}
+.signin-title2 {
+  font-family: 'Montserrat Subrayada', san  s-serif; 
+  font-size: 50px; 
+  font-style: normal;
+  font-weight: 400; 
+  line-height: normal; 
+  text-align: center; 
+  text-emphasis-color: white;
+  width: 100%; 
+  margin: 20px 0; 
+}
+
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 20px; 
+  margin: 20px 0; 
+}
+
+.icon-container img {
+  width: 50px; 
+  height: auto; 
+}
+
+/* Form Container */
+.form-container {
+  background: #FFFFFF; 
+  padding: 40px;
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+input[type="text"],
+input[type="password"] {
+  width: 100%; 
+  padding: 15px;
+  margin-bottom: 15px; 
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  box-sizing: border-box; 
+}
+
+/* Button styles */
+button {
+  width: 100%; 
+  padding: 15px;
+  margin-bottom: 15px; 
+  border: none; 
+  border-radius: 20px; 
+  background-color: #3498DB; 
+  color: white; 
+  font-weight: bold; 
+  cursor: pointer;
+  box-sizing: border-box; 
+  transition: background-color 0.3s, opacity 0.3s; 
+}
+
+button:hover {
+  background-color: #2980B9; 
+  opacity: 0.9; 
+}
+
+/* Social Media Icons - Assuming you are using FontAwesome */
+.social-icons {
+  margin-bottom: 15px; 
+}
+
+.social-icons i {
+  margin: 0 5px; 
+  cursor: pointer; 
+  font-size: 24px;
+  color: #7f8c8d; 
+}
+
+.social-icons i:hover {
+  color: #3498DB; 
+}
+
+/* Additional Styles */
+.forgot-password {
+  color: #3498DB;
+  text-decoration: none; 
+  font-size: 14px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline; 
+}
+
+
+
+/* Container for both the form and the arc design */
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  max-width: 1000px;
+}
+
+/* Form Container */
+.form-container {
+  flex: 1;
+  margin-right: 20px; 
+ 
+}
+
+/* Arc Design Container */
+.arc-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 180px 0 0 180px; 
+  width: 50%; 
+  height: auto; 
+  background-color: #6758C4; 
+
+  color: white;
+  padding: 40px;
+}
+
+
+.arc-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.arc-container button {
+  
+  margin-bottom: 10px;
+}
+
+
+.toggle-container {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  background-color: #3b3e3f;
+  border-radius: 25px;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.toggle-slider {
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: left 0.3s ease-in-out;
+}
+
+
+
+
+.mode-text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  user-select: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+.user-mode {
+  right: 0;
+  opacity: 1; 
+}
+
+
+.manager-mode {
+  left: 0;
+  opacity: 0; 
+}
+
+.change_to_maker_mode {
+  color: #3498DB;
+  text-decoration: none; 
+  font-size: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .form-container {
+    width: 90%;
+  }
+  .arc-container {
+    width: 100%;
+    border-radius: 180px 180px 0 0; 
+  }
+}
+
+
+</style>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="form-container">
+            <div class="signin-title">SIGN IN</div> 
+          <form id="loginForm" action="login_m.php" method="post">
+            
+            <input type="text" id="account" name="account" placeholder="帳號">
+            <input type="password" id="password" name="password" placeholder="密碼">
+            <button type="submit">SIGN IN</button>
+
+            <a href="login_in.html" class=".change_to_maker_mode">change to user mode</a>
+          </form>
+        </div>
+
+        
+    <div class="arc-container">
+        <div class="signin-title2">STREAM　YOUR LIST!</div>
+			<button  onclick="window.location.href='sign_up_m.html'" type="button" >SIGN UP</button>
+        <div class="toggle-container" onclick="toggleMode()">
+            <div class="toggle-slider">
+              <span class="mode-text user-mode">USER</span>
+              <span class="mode-text manager-mode">MANAGER</span>
+            </div>
+        </div>
+          
+</div>
+
+<script>
+
+const toggleContainer = document.querySelector('.toggle-container');
+
+
+function toggleMode() {
+
+const toggleContainer = document.querySelector('.toggle-container');
+const slider = document.querySelector('.toggle-slider');
+const userText = document.querySelector('.user-mode');
+const managerText = document.querySelector('.manager-mode');
+const loginForm = document.getElementById('loginForm');
+
+
+function toggleMode() {
+  if (slider.style.left === '150px' || slider.style.left === '') {
+ 
+    slider.style.left = '150px'; 
+    userText.style.opacity = '0'; 
+    managerText.style.opacity = '1'; 
+    loginForm.action = 'manager.html'; 
+  } else {
+    
+    slider.style.left = '0'; 
+    userText.style.opacity = '1'; 
+    managerText.style.opacity = '0';
+    loginForm.action = 'user.html'; 
+  }
+}
+
+
+toggleContainer.addEventListener('click', toggleMode);
+
+
+window.onload = function() {
+  
+  if (toggleContainer.classList.contains('manager-mode')) {
+    slider.style.left = '150px';
+    userText.style.opacity = '0';
+    managerText.style.opacity = '1';
+    loginForm.action = 'manager.html';
+  } else {
+   
+    slider.style.left = '0';
+    userText.style.opacity = '1';
+    managerText.style.opacity = '0';
+    loginForm.action = 'user.html';
+  }
+};
+
+}
+
+</script>
+
+</body>
+</html>

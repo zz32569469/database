@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>Register Account</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400&display=swap" rel="stylesheet">
+<style>
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ECF0F1;
+}
+
+.register-container {
+  background-color: #7f8c8d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.register-title {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498DB;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #2980B9;
+}
+</style>
+</head>
+<body>
+
+<div class="register-container">
+	<form action="sign_up_u.php" method="post">
+		<h1 class="register-title">Register Account</h1>
+  		<input type="text" id="username" name="username" placeholder="帳號" required>
+  		<input type="password" id="password" name="password" placeholder="密碼" required>
+  		<button class="register-btn" type="submit">確認</button>
+	</form>
+</div>
+
+</body>
+</html>
